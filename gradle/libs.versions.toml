@@ -1,6 +1,6 @@
 [versions]
 agp = "8.5.1"
-kotlin = "1.9.0"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,12 +13,13 @@ material = "1.12.0"
 retrofit = "2.9.0"
 okhttp3 = "4.11.0"
 hilt = "2.49"
-kotlinKapt = "1.5.21"
+kotlinKapt = "2.0.0"
 gson = "2.11.0"
 lifecycleCompose = "2.8.3"
 coil = "2.6.0"
 navigationCompose = "2.7.7"
 hiltNavigationCompose = "1.2.0"
+composeCompiler = "1.5.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -56,6 +57,8 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinKapt" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
 
 [bundles]
 retrofit = ["retrofit", "retrofit-converter-gson"]
