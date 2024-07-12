@@ -11,7 +11,7 @@ data class AlbumDto(
     @SerializedName("artistId") var artistId: String? = null,
     @SerializedName("artistUrl") var artistUrl: String? = null,
     @SerializedName("contentAdvisoryRating") var contentAdvisoryRating: String? = null,
-    @SerializedName("artworkUrl100") var artworkUrl100: String? = null,
+    @SerializedName("artworkUrl100") var albumImageUrl: String? = null,
     @SerializedName("genres") var genres: List<GenreDto>? = null,
     @SerializedName("url") var url: String? = null
 )

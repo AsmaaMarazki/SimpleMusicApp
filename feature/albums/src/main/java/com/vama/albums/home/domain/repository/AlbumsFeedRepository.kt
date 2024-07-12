@@ -1,7 +1,7 @@
 package com.vama.albums.home.domain.repository
 
-import com.vama.albums.home.domain.model.AlbumModel
+import com.vama.albums.home.domain.model.AlbumsFeedModel
 
 interface AlbumsFeedRepository {
-    suspend fun getAlbumsFeed(): List<AlbumModel>
+    suspend fun getAlbumsFeed(): AlbumsFeedModel
 }

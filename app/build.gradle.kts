@@ -62,6 +62,7 @@ android {
 
 dependencies {
     implementation(project(":core:network"))
+    implementation(project(":feature:albums"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -79,5 +80,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
+    implementation(libs.androidx.navigation.compose)
+
 
 }

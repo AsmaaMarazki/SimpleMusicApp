@@ -1,0 +1,4 @@
+<resources>
+    <string name="albums_feed_error_btn_retry">Retry</string>
+    <string name="albums_feed_topbar_title">Top 100 Albums</string>
+</resources>
