@@ -23,3 +23,7 @@ rootProject.name = "Music Application"
 include(":app")
 include(":core")
 include(":core:network")
+include(":feature")
+include(":feature:albums")
+include(":utils")
+include(":utils:ui")
