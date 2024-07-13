@@ -47,5 +47,5 @@ fun AlbumCellView(album: AlbumModel, onClick: (album: AlbumModel) -> Unit) {
 @Composable
 @Preview
 fun AlbumCellViewPreview() {
-    AlbumCellView(AlbumModel("", "album1", "artist1", "", "music", "")) {}
+    AlbumCellView(AlbumModel("", "album1", "artist1", "", "music", "","")) {}
 }

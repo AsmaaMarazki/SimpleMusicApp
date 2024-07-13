@@ -3,6 +3,7 @@ package com.vama.albums.home.presentation.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.vama.albums.R
 import com.vama.albums.home.domain.usecase.GetAlbumsFeedUseCase
 import com.vama.albums.home.presentation.model.AlbumsFeedEvent
 import com.vama.albums.home.presentation.model.AlbumsFeedState
@@ -30,12 +31,14 @@ class AlbumsViewModel @Inject constructor(private val getAlbumsFeedUseCase: GetA
         viewModelScope.launch {
             _albumsFeedHomeState.emit(AlbumsFeedState.Loading)
             try {
-                val albums = getAlbumsFeedUseCase()
-                Log.d("ALBUMS:SUCCESS:", albums.toString())
-                _albumsFeedHomeState.value = AlbumsFeedState.Success(albums.albums)
+                getAlbumsFeedUseCase().collect {
+                    if (it.isNullOrEmpty())
+                        _albumsFeedHomeState.emit(AlbumsFeedState.Error(R.string.albums_feed_error_empty_message))
+                    else
+                        _albumsFeedHomeState.emit(AlbumsFeedState.Success(it))
+                }
             } catch (e: Exception) {
-                Log.d("ALBUMS:ERROR:", e.message ?: "")
-                _albumsFeedHomeState.value = AlbumsFeedState.Error(e.message ?: "")
+                _albumsFeedHomeState.emit(AlbumsFeedState.Error(R.string.albums_feed_error_general_message))
 
             }
         }

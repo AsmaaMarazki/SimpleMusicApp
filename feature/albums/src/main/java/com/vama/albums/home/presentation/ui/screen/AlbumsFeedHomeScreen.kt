@@ -6,6 +6,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.vama.albums.home.presentation.model.AlbumsFeedEvent
@@ -38,7 +39,7 @@ fun AlbumsFeedHomeScreen(
                 }
 
                 is AlbumsFeedState.Error -> {
-                    AlbumsFeedErrorView(message = state.message) {
+                    AlbumsFeedErrorView(message = stringResource(id = state.message)) {
                         albumsViewModel.onTriggerEvent(AlbumsFeedEvent.GET_ALBUMS_FEED)
                     }
                 }

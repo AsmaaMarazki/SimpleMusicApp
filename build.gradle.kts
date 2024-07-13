@@ -6,4 +6,5 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.jetbrains.kotlin.kapt) apply false
     alias(libs.plugins.kotlin.compose.compiler) apply false
+    alias(libs.plugins.realm) apply false
 }
