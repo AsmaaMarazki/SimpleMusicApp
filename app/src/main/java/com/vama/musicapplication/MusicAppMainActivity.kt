@@ -16,7 +16,6 @@ class MusicAppMainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            //try commit
             MusicApplicationTheme {
                 VamaMusicNavHost()
             }
