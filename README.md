@@ -17,7 +17,8 @@ Simply moduralization makes the components scalable and reusable.
 
 Clone project using android studio on master branch.</br>
 Screenshots:</br>
-![alt text](/home.jpeg?raw=true)
 ![alt text](/details.jpeg?raw=true)
+![alt text](/home.jpeg?raw=true)
+
 
 
