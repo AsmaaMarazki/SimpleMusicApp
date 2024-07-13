@@ -34,8 +34,8 @@ fun AlbumsFeedGridView(albums: List<AlbumModel>, onCellClick: (album: AlbumModel
 fun AlbumsFeedGridViewPreview() {
     AlbumsFeedGridView(
         albums = listOf(
-            AlbumModel("", "album1", "artist1", "", "music", ""),
-            AlbumModel("", "album2", "artist2", "", "music", "")
+            AlbumModel("", "album1", "artist1", "", "music", "",""),
+            AlbumModel("", "album2", "artist2", "", "music", "","")
         )
     ) {
 

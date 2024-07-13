@@ -1,7 +1,8 @@
 package com.vama.albums.home.di
 
-import com.vama.albums.home.data.AlbumsFeedRepositoryImpl
+import com.vama.albums.home.data.repository.AlbumsFeedRepositoryImpl
 import com.vama.albums.home.data.mapper.AlbumsFeedMapper
+import com.vama.database.albums.doa.AlbumsLocalDataSource
 import com.vama.albums.home.data.source.remote.AlbumsRemoteDataSource
 import com.vama.albums.home.data.source.remote.AlbumsServiceApi
 import com.vama.albums.home.domain.repository.AlbumsFeedRepository
@@ -27,9 +28,10 @@ class AlbumsModule {
     @Provides
     fun providesAlbumsFeedRepository(
         albumsRemoteDataSource: AlbumsRemoteDataSource,
-        mapper: AlbumsFeedMapper
+        mapper: AlbumsFeedMapper,
+        albumsLocalDataSource: AlbumsLocalDataSource
     ): AlbumsFeedRepository =
-        AlbumsFeedRepositoryImpl(albumsRemoteDataSource, mapper)
+        AlbumsFeedRepositoryImpl(albumsRemoteDataSource, mapper, albumsLocalDataSource)
 
     @ViewModelScoped
     @Provides

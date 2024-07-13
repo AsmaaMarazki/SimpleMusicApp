@@ -10,7 +10,6 @@ class VamaMusicApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         setUpAppNetworkConfigurations()
-
     }
 
     private fun setUpAppNetworkConfigurations() {
