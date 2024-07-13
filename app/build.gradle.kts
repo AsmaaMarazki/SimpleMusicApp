@@ -82,6 +82,7 @@ dependencies {
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.splash)
 
 
 }
