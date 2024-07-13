@@ -9,6 +9,7 @@ class GetAlbumDetailsUseCase(
     private val albumDetailsRepository: AlbumDetailsRepository,
     private val dispatcher: CoroutineDispatcher
 ) {
+
     suspend operator fun invoke(albumId: String): AlbumDetailsModel? {
         return withContext(dispatcher) {
             albumDetailsRepository.getAlbumDetails(albumId)
