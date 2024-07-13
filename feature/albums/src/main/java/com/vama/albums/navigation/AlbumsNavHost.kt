@@ -16,16 +16,18 @@ fun AlbumsNavHost(startScreen: String = AlbumsScreensRoutes.AlbumsFeedScreenRout
     NavHost(navController = navController, startDestination = startScreen) {
 
         composable(AlbumsScreensRoutes.AlbumsFeedScreenRoute.route) {
-            AlbumsFeedHomeScreen(navController)
+            AlbumsFeedHomeScreen {
+                navController.navigate("${AlbumsScreensRoutes.AlbumDetailsScreenRoute}/$it")
+            }
         }
         composable(
-            AlbumsScreensRoutes.AlbumDetailsScreenRoute.route,
+            "${AlbumsScreensRoutes.AlbumDetailsScreenRoute}/{${Arguments.ALBUM_ID}}",
             arguments = listOf(navArgument(Arguments.ALBUM_ID) {
                 type = NavType.StringType
             })
         ) {
             AlbumDetailsScreen(albumId = it.arguments?.getString(Arguments.ALBUM_ID)) {
-                navController.popBackStack()
+                navController.navigateUp()
             }
         }
     }

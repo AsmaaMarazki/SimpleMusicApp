@@ -11,8 +11,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.vama.albums.details.presentation.model.AlbumDetailsEvent
 import com.vama.albums.details.presentation.model.AlbumDetailsState
-import com.vama.albums.details.presentation.ui.topbar.AlbumDetailsTopBar
 import com.vama.albums.details.presentation.ui.error.AlbumDetailsErrorView
+import com.vama.albums.details.presentation.ui.topbar.AlbumDetailsTopBar
 import com.vama.albums.details.presentation.viewmodel.AlbumDetailsViewModel
 import com.vama.ui.loading.FullScreenCircularLoading
 
