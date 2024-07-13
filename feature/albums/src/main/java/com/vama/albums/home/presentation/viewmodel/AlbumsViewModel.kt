@@ -1,6 +1,5 @@
 package com.vama.albums.home.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vama.albums.R
@@ -14,7 +13,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlbumsViewModel @Inject constructor(private val getAlbumsFeedUseCase: GetAlbumsFeedUseCase) :
+class AlbumsViewModel @Inject constructor(
+    private val getAlbumsFeedUseCase: GetAlbumsFeedUseCase) :
     ViewModel() {
     private val _albumsFeedHomeState =
         MutableStateFlow<AlbumsFeedState>(AlbumsFeedState.Loading)
@@ -38,7 +38,7 @@ class AlbumsViewModel @Inject constructor(private val getAlbumsFeedUseCase: GetA
                         _albumsFeedHomeState.emit(AlbumsFeedState.Success(it))
                 }
             } catch (e: Exception) {
-                _albumsFeedHomeState.emit(AlbumsFeedState.Error(R.string.albums_feed_error_general_message))
+                _albumsFeedHomeState.emit(AlbumsFeedState.Error(R.string.error_general_message))
 
             }
         }

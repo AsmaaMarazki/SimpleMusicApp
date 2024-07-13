@@ -12,7 +12,10 @@ import androidx.compose.ui.unit.dp
 import com.vama.albums.home.domain.model.AlbumModel
 
 @Composable
-fun AlbumsFeedGridView(albums: List<AlbumModel>, onCellClick: (album: AlbumModel) -> Unit) {
+fun AlbumsFeedGridView(
+    albums: List<AlbumModel>,
+    onCellClick: (albumId: String) -> Unit
+) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
@@ -34,8 +37,8 @@ fun AlbumsFeedGridView(albums: List<AlbumModel>, onCellClick: (album: AlbumModel
 fun AlbumsFeedGridViewPreview() {
     AlbumsFeedGridView(
         albums = listOf(
-            AlbumModel("", "album1", "artist1", "", "music", "",""),
-            AlbumModel("", "album2", "artist2", "", "music", "","")
+            AlbumModel("", "album1", "artist1", ""),
+            AlbumModel("", "album2", "artist2", "")
         )
     ) {
 

@@ -20,10 +20,7 @@ class AlbumsFeedMapper @Inject constructor() {
                 id = albumId,
                 name = albumName,
                 artist = artistName,
-                albumImageUrl = albumImgUrl,
-                genre = it.genres?.firstOrNull()?.name,
-                releaseDate = it.releaseDate,
-                copyright = albumsFeedDto.copyright
+                albumImageUrl = albumImgUrl
             )
         }
 
@@ -35,10 +32,7 @@ class AlbumsFeedMapper @Inject constructor() {
                 it.id,
                 it.name,
                 it.artist,
-                it.albumImageUrl,
-                it.genre,
-                it.releaseDate,
-                it.copyright
+                it.albumImageUrl
             )
         }
     }

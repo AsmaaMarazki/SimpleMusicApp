@@ -1,4 +1,4 @@
-package com.vama.database.albums.doa
+package com.vama.database.albums.home.doa
 
 import com.vama.database.albums.entity.AlbumEntity
 

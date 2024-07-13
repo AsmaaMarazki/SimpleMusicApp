@@ -4,7 +4,7 @@ import com.vama.albums.home.data.mapper.AlbumsFeedMapper
 import com.vama.albums.home.data.source.remote.AlbumsRemoteDataSource
 import com.vama.albums.home.domain.model.AlbumModel
 import com.vama.albums.home.domain.repository.AlbumsFeedRepository
-import com.vama.database.albums.doa.AlbumsLocalDataSource
+import com.vama.database.albums.home.doa.AlbumsLocalDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

@@ -1,10 +1,12 @@
-package com.vama.database.albums.doa
+package com.vama.database.albums.home.doa
 
 import com.vama.database.albums.entity.AlbumEntity
 import io.realm.kotlin.Realm
 import io.realm.kotlin.UpdatePolicy
+import javax.inject.Inject
 
-internal class AlbumsLocalDataSourceImpl(private val realm: Realm) : AlbumsLocalDataSource {
+internal class AlbumsLocalDataSourceImpl @Inject constructor(private val realm: Realm) :
+    AlbumsLocalDataSource {
     override suspend fun insertAlbums(albumEntities: List<AlbumEntity>) {
         realm.write {
             albumEntities.forEach { copyToRealm(it, UpdatePolicy.ALL) }

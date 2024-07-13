@@ -9,15 +9,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavHostController
 import com.vama.albums.home.presentation.model.AlbumsFeedEvent
 import com.vama.albums.home.presentation.model.AlbumsFeedState
 import com.vama.albums.home.presentation.ui.error.AlbumsFeedErrorView
 import com.vama.albums.home.presentation.ui.loading.AlbumsFeedLoadingView
 import com.vama.albums.home.presentation.ui.topbar.AlbumsFeedTopBar
 import com.vama.albums.home.presentation.viewmodel.AlbumsViewModel
+import com.vama.albums.navigation.Routes.ALBUM_DETAILS_SCREEN
 
 @Composable
 fun AlbumsFeedHomeScreen(
+    navController: NavHostController,
     albumsViewModel: AlbumsViewModel = hiltViewModel()
 ) {
     Scaffold(topBar = {
@@ -35,6 +38,7 @@ fun AlbumsFeedHomeScreen(
 
                 is AlbumsFeedState.Success -> {
                     AlbumsFeedGridView(state.albums) {
+                        navController.navigate("${ALBUM_DETAILS_SCREEN}${it}")
                     }
                 }
 
