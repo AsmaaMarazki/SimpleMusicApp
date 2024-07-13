@@ -1,4 +1,4 @@
-# SimpleNusicApp
+# SimpleMusicApp
 Contains two screens Albums and Album details</br>
 on click on album from Albums screen it redirects you to it's details</br>
 
