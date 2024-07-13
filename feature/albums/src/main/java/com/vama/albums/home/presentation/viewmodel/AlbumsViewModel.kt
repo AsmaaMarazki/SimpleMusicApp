@@ -14,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AlbumsViewModel @Inject constructor(
-    private val getAlbumsFeedUseCase: GetAlbumsFeedUseCase) :
+    private val getAlbumsFeedUseCase: GetAlbumsFeedUseCase
+) :
     ViewModel() {
     private val _albumsFeedHomeState =
         MutableStateFlow<AlbumsFeedState>(AlbumsFeedState.Loading)
@@ -38,7 +39,9 @@ class AlbumsViewModel @Inject constructor(
                         _albumsFeedHomeState.emit(AlbumsFeedState.Success(it))
                 }
             } catch (e: Exception) {
-                _albumsFeedHomeState.emit(AlbumsFeedState.Error(R.string.error_general_message))
+                if (_albumsFeedHomeState.value !is AlbumsFeedState.Success) {
+                    _albumsFeedHomeState.emit(AlbumsFeedState.Error(R.string.error_general_message))
+                }
 
             }
         }
