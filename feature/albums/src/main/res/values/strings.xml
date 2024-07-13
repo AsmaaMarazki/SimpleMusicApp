@@ -1,6 +1,12 @@
 <resources>
     <string name="albums_feed_error_btn_retry">Retry</string>
     <string name="albums_feed_topbar_title">Top 100 Albums</string>
-    <string name="albums_feed_error_empty_message">No albums found</string>"
-    <string name="albums_feed_error_general_message">Something went wrong</string>"
+    <string name="albums_feed_error_empty_message">No albums found</string>
+    <string name="error_general_message">Something went wrong</string>
+    <string name="album_details_error_empty_message">No album found</string>
+    <string name="album_details_error_general_message">Something went wrong</string>
+    <string name="album_details_error_btn_close">Close</string>
+    <string name="album_details_error_invalid_message">Invalid Album Request</string>
+    <string name="album_details_topbar_title">Album Details</string>
+
 </resources>

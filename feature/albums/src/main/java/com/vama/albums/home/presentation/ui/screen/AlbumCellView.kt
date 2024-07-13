@@ -18,13 +18,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.vama.albums.home.domain.model.AlbumModel
-import com.vama.ui.NetworkImage
+import com.vama.ui.image.NetworkImage
 
 @Composable
-fun AlbumCellView(album: AlbumModel, onClick: (album: AlbumModel) -> Unit) {
+fun AlbumCellView(album: AlbumModel, onClick: (albumId: String) -> Unit) {
     Column(
         modifier = Modifier
-            .clickable { onClick(album) }
+            .clickable { onClick(album.id) }
             .background(
                 color = Color.LightGray,
                 shape = RoundedCornerShape(6.dp)
@@ -47,5 +47,5 @@ fun AlbumCellView(album: AlbumModel, onClick: (album: AlbumModel) -> Unit) {
 @Composable
 @Preview
 fun AlbumCellViewPreview() {
-    AlbumCellView(AlbumModel("", "album1", "artist1", "", "music", "","")) {}
+    AlbumCellView(AlbumModel("", "album1", "artist1", "")) {}
 }

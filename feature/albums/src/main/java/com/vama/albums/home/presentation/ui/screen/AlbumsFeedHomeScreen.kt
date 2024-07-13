@@ -18,7 +18,8 @@ import com.vama.albums.home.presentation.viewmodel.AlbumsViewModel
 
 @Composable
 fun AlbumsFeedHomeScreen(
-    albumsViewModel: AlbumsViewModel = hiltViewModel()
+    albumsViewModel: AlbumsViewModel = hiltViewModel(),
+    goToDetails: (albumId: String) -> Unit,
 ) {
     Scaffold(topBar = {
         AlbumsFeedTopBar()
@@ -35,6 +36,7 @@ fun AlbumsFeedHomeScreen(
 
                 is AlbumsFeedState.Success -> {
                     AlbumsFeedGridView(state.albums) {
+                        goToDetails(it)
                     }
                 }
 

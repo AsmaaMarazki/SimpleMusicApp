@@ -1,7 +1,9 @@
 package com.vama.database
 
-import com.vama.database.albums.doa.AlbumsLocalDataSource
-import com.vama.database.albums.doa.AlbumsLocalDataSourceImpl
+import com.vama.database.albums.details.doa.AlbumDetailsLocalDataSource
+import com.vama.database.albums.details.doa.AlbumDetailsLocalDataSourceImpl
+import com.vama.database.albums.home.doa.AlbumsLocalDataSource
+import com.vama.database.albums.home.doa.AlbumsLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,4 +27,9 @@ object DatabaseModule {
     fun providesAlbumsDoa(
         db: Realm
     ): AlbumsLocalDataSource = AlbumsLocalDataSourceImpl(db)
+
+    @Provides
+    @Singleton
+    fun providesAlbumsDetailsDoa(db: Realm): AlbumDetailsLocalDataSource =
+        AlbumDetailsLocalDataSourceImpl(db)
 }
