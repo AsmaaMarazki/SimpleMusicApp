@@ -11,7 +11,7 @@ Why DDD? to be able to use same domain layer with any kotlin project in future (
 Why coroutines? because it's pure kotlin, light weight and better in performance </br>
 Why Modules? </br>
 make each feature lib module to be apple to run it independent to be more faster while build, single point of failure and easy to assign owner for it.</br>
-make database module contains all Doa to have single module to change if we decide to replace room by anything else.</br>
+make database module contains all Doa to have single module to change if we decide to replace realm by anything else.</br>
 make utils module to be reusable.
 Simply moduralization makes the components scalable and reusable.
 
