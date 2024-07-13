@@ -21,13 +21,16 @@ fun AlbumDetailsScreen(
     albumId: String?,
     albumDetailsViewModel: AlbumDetailsViewModel = hiltViewModel(), onBackClicked: () -> Unit
 ) {
+    val state =
+        albumDetailsViewModel.albumDetailsState.collectAsStateWithLifecycle().value
     LaunchedEffect(Unit) {
-        albumDetailsViewModel.onTriggerEvent(AlbumDetailsEvent.GetAlbumDetails(albumId))
+        if (state !is AlbumDetailsState.Success) {
+            albumDetailsViewModel.onTriggerEvent(AlbumDetailsEvent.GetAlbumDetails(albumId))
+        }
     }
     Scaffold(topBar = { AlbumDetailsTopBar(onBackClicked) }) {
         Box(modifier = Modifier.padding(it)) {
-            when (val state =
-                albumDetailsViewModel.albumDetailsState.collectAsStateWithLifecycle().value) {
+            when (state) {
                 is AlbumDetailsState.Loading -> {
                     FullScreenCircularLoading()
                 }

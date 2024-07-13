@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -21,15 +22,18 @@ fun AlbumsFeedHomeScreen(
     albumsViewModel: AlbumsViewModel = hiltViewModel(),
     goToDetails: (albumId: String) -> Unit,
 ) {
+    val state = albumsViewModel.albumsFeedHomeState.collectAsStateWithLifecycle().value
+    LaunchedEffect(Unit) {
+        if (state !is AlbumsFeedState.Success)
+            albumsViewModel.onTriggerEvent(AlbumsFeedEvent.GET_ALBUMS_FEED)
+    }
+
     Scaffold(topBar = {
         AlbumsFeedTopBar()
     }) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
-            LaunchedEffect(Unit) {
-                albumsViewModel.onTriggerEvent(AlbumsFeedEvent.GET_ALBUMS_FEED)
-            }
-            when (val state =
-                albumsViewModel.albumsFeedHomeState.collectAsStateWithLifecycle().value) {
+
+            when (state) {
                 is AlbumsFeedState.Loading -> {
                     AlbumsFeedLoadingView()
                 }
